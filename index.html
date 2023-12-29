@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@5.3.0/dist/simplebar.min.css">
+    <script src="https://unpkg.com/simplebar@5.3.0/dist/simplebar.min.js"></script>
+    <script src="https://kit.fontawesome.com/650ed1a0d3.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <title>Task Manager</title>
+</head>
+<body>
+    <div id="authSection">
+        <div id="loginForm">
+            <h2>Log in</h2>
+            <form>
+                <div class="input-container">
+                    <input type="text" id="username" required placeholder="Username">
+                </div>
+                <div class="input-container">
+                    <input type="password" id="password" required placeholder="Password">
+                </div>
+                <button type="button" onclick="login()" id="animation">Log in</button>
+                <p id="loginError" class="error"></p>
+            </form>
+        </div>
+        <div id="signupForm">
+            <h2>Sign up</h2>
+            <form>
+                <div class="input-container">
+                    <input type="text" id="signupUsername" required placeholder="Username">
+                </div>
+                <div class="input-container">
+                    <input type="password" id="signupPassword" required placeholder="Password">
+                </div>
+                <button type="button" onclick="signup()" id="animation">Sign up</button>
+                <p id="signupError" class="error"></p>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="taskManager" style="display: none;">
+     
+        <div class="task-manager" data-simplebar>
+            <button onclick="logOut()" id="logout">Log Out</button>
+            <h1>Task Manager</h1>
+            <div class="add-task">
+                <input type="text" id="taskInput" placeholder="Add a new task">
+                <button onclick="addTask()">add</button>
+            </div>
+            <div class="task-filters">
+                <button onclick="filterTasks('all')" id="animation">All</button>
+                <button onclick="filterTasks('active')" id="animation">Active</button>
+                <button onclick="filterTasks('completed')" id="animation">Completed</button>
+            </div>
+            <ul id="taskList" class="task-list" data-simplebar></ul>
+        </div>
+    </div>
+</body>
+</html>
